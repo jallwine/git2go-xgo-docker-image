@@ -2,6 +2,7 @@ A docker container for building cross platform executables that depend on git2go
 
 Usage
 
+    docker pull karalabe/xgo-latest
     git clone https://github.com/jallwine/xgo-git2go-docker-image.git
     cd xgo-git2go-docker-image
     docker build . --tag xgo-git2go
