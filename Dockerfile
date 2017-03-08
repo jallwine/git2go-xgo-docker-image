@@ -1,12 +1,14 @@
 FROM karalabe/xgo-latest
 
-RUN apt-get -y install vim cmake libssh2-1-dev libcurl4-openssl-dev
-RUN go get -d github.com/libgit2/git2go
-RUN git clone https://github.com/libgit2/libgit2.git /tmp/libgit2
+RUN apt-get -y install vim cmake
+#RUN go get -d github.com/libgit2/git2go
+#COPY build_linux.sh /tmp/
+#RUN sh /tmp/build_linux.sh
 
-COPY build_linux.sh /tmp/
-RUN sh /tmp/build_linux.sh
+RUN wget https://github.com/libgit2/libgit2/archive/v0.25.1.tar.gz -O /tmp/libgit2.tar.gz
+COPY build_windows.sh /tmp/
+RUN sh /tmp/build_windows.sh
 
-COPY toolchain_windows.cmake /tmp/
+#RUN GOOS=windows GOARCH=amd64 go get -v github.com/libgit2/git2go
 
 ENTRYPOINT ["/build.sh"]
