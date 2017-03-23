@@ -20,6 +20,3 @@ Usage - Windows
     docker build . --tag xgo-windows
     xgo --targets=windows/amd64 --image=xgo-windows github.com/odewahn/git2go-test
     ls git2go-test-windows-4.0-amd64.exe
-    id=$(docker create xgo-windows) # start temporary docker container
-    docker cp $id:/tmp/libgit2-0.25.1/build_windows/libgit2.dll . # copy over libgit2.dll
-    docker rm -v $id # stop temporary container
