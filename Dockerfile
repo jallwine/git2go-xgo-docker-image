@@ -1,5 +1,7 @@
 FROM karalabe/xgo-latest
 
+RUN apt-get -y upgrade
+RUN apt-get -y update
 RUN apt-get -y install vim cmake
 RUN go get -d github.com/libgit2/git2go
 
