@@ -1,5 +1,7 @@
 FROM karalabe/xgo-latest
 
+RUN apt-get -y upgrade
+RUN apt-get -y update
 RUN apt-get -y install vim cmake 
 
 RUN wget https://www.openssl.org/source/openssl-1.1.0e.tar.gz -O /tmp/openssl.tar.gz

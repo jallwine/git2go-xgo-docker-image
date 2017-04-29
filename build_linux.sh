@@ -22,5 +22,6 @@ make
 make install
 
 cd $GOPATH/src/github.com/libgit2/git2go/
+git checkout 4a14260153072e1e0d8e32d9270b30e3acca7c80
 git submodule update --init
 make install
